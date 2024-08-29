@@ -1,12 +1,11 @@
+import { IBase } from './root.types';
+
 export enum EnumTaskPriority {
   low = 'low',
   medium = 'medium',
   high = 'high',
 }
-export interface ITaskResponse {
-  id: number;
-  createdAt?: string;
-  updatedAt?: string;
+export interface ITaskResponse extends IBase {
   name: string;
   priority?: EnumTaskPriority;
   isCompleted: boolean;
