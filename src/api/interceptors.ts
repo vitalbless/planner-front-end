@@ -4,6 +4,7 @@ import {
 } from '@/services/auth-token.service';
 import axios, { type CreateAxiosDefaults } from 'axios';
 import { errorCatch } from './error';
+import { authService } from '@/services/auth.service';
 
 /* withCredentials ставим т.к работаем с серверными куками */
 const options: CreateAxiosDefaults = {
@@ -13,7 +14,6 @@ const options: CreateAxiosDefaults = {
 };
 
 const axiosClassic = axios.create(options);
-
 const axiosWithAuth = axios.create(options);
 
 axiosWithAuth.interceptors.request.use((config) => {
