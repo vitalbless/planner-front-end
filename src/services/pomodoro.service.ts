@@ -14,7 +14,7 @@ class PomodoroService {
     );
     return response;
   }
-  async create() {
+  async createSession() {
     const response = await axiosWithAuth.post<IPomodoroSessionResponse>(
       `${this.BASE_URL}`
     );
